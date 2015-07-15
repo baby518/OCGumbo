@@ -114,6 +114,7 @@ NS_INLINE GumboNode *oc_gumbo_get_first_element_by_tag(GumboNode *node, GumboTag
 }
 
 + (id)nodeWithGumboNode:(GumboNode *)node {
+    if (node == nil) return nil;
     Class cls;
     if (node->type == GUMBO_NODE_DOCUMENT) {
         cls = [OCGumboDocument class];
